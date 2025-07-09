@@ -56,7 +56,7 @@ SELECT * from students
 --ROLLBACK TO my_savepoint
 
 9.
---Step 1. We have to  click the link below then upload a file . Then  go to “ Desctop ” find the downloaded file then click on the right and save to C disk
+--Step 1. We have to  click the link below then upload a file . Then  go to “ Desktop ” find the downloaded file then click on the right and save to C disk
 --Step 2. Then we have to go to c-disk find program files click on it and go to the " Microsoft SQL Server" section. There we can find section "MSSQL" within this section is the "backup" department  . We have to enter department "Backup"  it asks for permission to enter, click continue then save the file.
 --Step 3. From Object explorer we will select database and right-click . Then select Restore database.
 --Step 4. Then we go to the section "Source" then go over the section "device" then click "....." bottom.
