@@ -25,7 +25,7 @@ SELECT DISTINCT FirstName , Country FROM Customers
 
 -- 6 TASK 
 
-SELECT *  , 
+SELECT ProductID, ProductName, Price, 
 	CASE WHEN Price > 1000 THEN 'HIGH'
 	ELSE'LOW'
 	END AS PriceLevel
@@ -59,29 +59,22 @@ FROM Products
 
 -- 11 TASK 
 
-SELECT EmployeeID , Age, Salary,
-		CASE 
+SELECT EmployeeID, Age, Salary,
+	CASE 
         WHEN Salary > 60000 THEN 'High Earner'
         ELSE 'Regular'
     END AS SalaryCategory,
     IIF(Age < 25, 'Young', 'Adult') AS AgeGroup
 FROM Employees
+WHERE Age < 25 OR Salary > 60000
+
 
 -- 12 TASK 
 UPDATE Employees
 SET Salary = Salary * 1.10
 WHERE DepartmentName = 'HR' OR EmployeeID = 5
 
---alternative version of 12 task 
---UPDATE Employees
---SET Salary = 
---    CASE 
---        WHEN DepartmentName = 'HR' OR EmployeeID = 5 THEN Salary * 1.10
---        ELSE Salary
---    END;
-
-
-
+	
 --Hard-Level Tasks
 
 -- 13 TASK
@@ -102,7 +95,8 @@ SELECT CustomerID FROM Sales
 SELECT CustomerID, Quantity,
 	CASE 
 		WHEN Quantity = 1 THEN 0.03
-		WHEN Quantity BETWEEN 2 AND 3 THEN 0.05
+		WHEN Quantity > 1 AND Quantity <= 3 THEN 0.05
 		ELSE 0.07
 	END AS DiscountPercent
 FROM Orders
+
