@@ -1,0 +1,41 @@
+--PUZZLE 1 
+-- 1 VERSION
+SELECT DISTINCT
+    CASE WHEN col1 < col2 THEN col1 ELSE col2 END AS col1,
+    CASE WHEN col1 < col2 THEN col2 ELSE col1 END AS col2
+FROM InputTbl
+--2 VERSION 
+SELECT col1, col2 FROM InputTbl
+WHERE col1 <= col2
+UNION
+SELECT col2, col1 FROM InputTbl
+WHERE col1 > col2
+
+
+--PUZZLE 2 
+SELECT * FROM TestMultipleZero
+WHERE NOT (A=0 AND B=0 AND C=0 AND D=0)
+
+-- PUZZLE 3 
+SELECT * FROM  section1
+WHERE ID% 2 = 1 
+
+
+--PUZZLE 4 
+SELECT TOP 1 id, name
+FROM section1
+ORDER BY ID ASC
+
+
+--PUZZLE 5 
+SELECT TOP 1 ID, NAME
+FROM section1
+ORDER BY ID DESC
+
+-- PUZZLE 6 
+SELECT NAME FROM section1
+WHERE NAME LIKE 'B%'
+
+-- PUZZLE 7 
+ SELECT Code FROM ProductCodes 
+ WHERE Code LIKE '%/_%' ESCAPE '/'
